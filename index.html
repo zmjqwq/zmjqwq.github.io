@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 | 认知科学与软件开发</title>
+    <!-- 引入 Tailwind CSS 以快速实现现代排版 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academic: {
+                            red: '#991B1B', // 核心点缀色：学术红
+                            light: '#FEF2F2',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased selection:bg-academic-red selection:text-white">
+    
+    <!-- 顶部导航栏 -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tighter text-gray-900">Portfolio.</a>
+            <div class="space-x-6 text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-academic-red transition-colors">关于</a>
+                <a href="#research" class="hover:text-academic-red transition-colors">研究经历</a>
+                <a href="#projects" class="hover:text-academic-red transition-colors">开发项目</a>
+                <a href="#skills" class="hover:text-academic-red transition-colors">技能栈</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首屏 (Hero Section) -->
+    <main id="about" class="max-w-5xl mx-auto px-6 py-32 flex flex-col items-start justify-center min-h-[70vh]">
+        <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
+            连接<span class="text-academic-red">认知科学</span>与<br>
+            现代前端工程。
+        </h1>
+        <p class="text-lg text-gray-600 max-w-2xl mb-10 leading-relaxed">
+            致力于研究视觉组块与工作记忆机制，同时热爱将严谨的实验逻辑转化为优雅的代码实现。<br>
+            熟悉 Python 与 JavaScript，擅长构建全栈应用、在线心理实验平台及量化数据分析。
+        </p>
+        <div class="flex space-x-4">
+            <a href="#projects" class="bg-academic-red text-white px-6 py-3 rounded-md font-medium hover:bg-red-800 transition-colors shadow-sm">
+                查看项目与研究
+            </a>
+            <a href="resume.pdf" target="_blank" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:border-academic-red hover:text-academic-red transition-colors">
+                下载完整简历 (PDF)
+            </a>
+        </div>
+    </main>
+
+    <!-- 研究经历模块 -->
+    <section id="research" class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-10 border-l-4 border-academic-red pl-4">研究经历</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">视空工作记忆与视觉组块策略研究</h3>
+                <p class="text-sm text-gray-500 mb-4">认知心理学实验设计与数据分析</p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    主导设计并实施了关于视空工作记忆（Visuospatial Working Memory）的心理学实验，重点探究视觉组块的形成与提取机制。负责清洗与整理多维度的实验数据，并运用协方差分析 (ANCOVA) 及马氏距离 (Mahalanobis distance) 等统计方法剔除异常值并进行深度建模，确保实验结论的严谨性。
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-academic-light text-academic-red text-xs rounded-full font-medium">实验设计</span>
+                    <span class="px-3 py-1 bg-academic-light text-academic-red text-xs rounded-full font-medium">数据建模</span>
+                    <span class="px-3 py-1 bg-academic-light text-academic-red text-xs rounded-full font-medium">统计分析</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开发项目模块 -->
+    <section id="projects" class="py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-10 border-l-4 border-academic-red pl-4">开发项目</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 项目一 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">在线心理学测试与数据采集平台</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 flex-grow">
+                        独立开发部署的 Web 端心理测试环境。平台内置 Corsi 敲击任务 (Corsi block-tapping task) 与 Raven 瑞文推理测验矩阵。通过脚本实现了防作弊的全屏限制、高精度的鼠标点击坐标与时间参数采集，保障了被试数据的有效性与精确度。
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">全栈部署</span>
+                    </div>
+                </div>
+
+                <!-- 项目二 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">歌词语法自动解析与同步系统</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 flex-grow">
+                        基于 WebNowPlaying 接口开发的语言学习辅助原型工具。系统能够将歌曲音频与歌词文本精准同步，并通过自动化脚本对韩语歌词进行逐词拆解、词汇提取与语法点高亮解析，为跨语种学习提供了创新的交互体验。
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">WebNowPlaying</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">文本解析</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">前端交互</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能树模块 -->
+    <section id="skills" class="py-20 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-gray-900 mb-10 border-l-4 border-academic-red pl-4">技能与工具</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">编程与开发</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Python (自动化脚本 / 文本处理)</li>
+                        <li>JavaScript (前端与交互逻辑)</li>
+                        <li>Git 版本控制与部署</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">数据与研究</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Stata / 数据清洗与统计建模</li>
+                        <li>协方差分析 (ANCOVA)</li>
+                        <li>认知心理学实验范式开发</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-4">数字艺术与设计</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>FL Studio (编曲与制作)</li>
+                        <li>VCV Rack (模块化合成器)</li>
+                        <li>极简排版与视觉设计</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-white py-10 border-t border-gray-100 text-center">
+        <p class="text-gray-500 text-sm">© 2026 Crafted with ❤️ for Research & Engineering.</p>
+    </footer>
+
+</body>
+</html>
